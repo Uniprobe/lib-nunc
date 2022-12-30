@@ -1,0 +1,17 @@
+menuconfig LIBNUNC
+	bool "NUNC change detection processing"
+	default n
+
+if LIBNUNC
+	config LIBNUNC_MAIN_FUNCTION
+		bool "Provide main function"
+		default n
+
+	config LIBNUNC_MAIN_EXAMPLE
+		bool "If the nunc main is present, run an example test and exit"
+		default y
+
+	config LIBNUNC_DEFAULT_PROC
+		bool "Create a default nunc procssor"
+		default y
+endif

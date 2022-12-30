@@ -1,0 +1,16 @@
+################################################################################
+# Register with unikraft
+################################################################################
+$(eval $(call addlib_s,libnunc,$(CONFIG_LIBNUNC)))
+
+################################################################################
+# Library includes
+################################################################################
+CINCLUDES-$(CONFIG_LIBNUNC)   += -I$(LIBNUNC_BASE)/include
+
+################################################################################
+# Library sources
+################################################################################
+LIBNUNC_SRCS-$(CONFIG_LIBNUNC_MAIN_FUNCTION) += $(LIBNUNC_BASE)/nunc.c
+LIBNUNC_SRCS-$(CONFIG_LIBNUNC) += $(LIBNUNC_BASE)/processor.c
+LIBNUNC_SRCS-$(CONFIG_LIBNUNC) += $(LIBNUNC_BASE)/sort.c
